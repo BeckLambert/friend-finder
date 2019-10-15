@@ -23,14 +23,16 @@ module.exports = function (app) {
                 var currentFriend = friends[i];
                 scoreDifference = 0;
                 console.log(currentFriend.name);
+
+                for (var j = 0; j < friends.scores.length; j++) {
+                    var currentFriendScore = currentFriend.score[j]
+                    var userIndex = userScores[j];
+    
+                    scoreDifference += Math.abs(parseInt(userIndex - parseInt(currentFriendScore)));
+            };
         };
 
-        for (var j = 0; j < friends.scores.length; j++) {
-                var currentFriendScore = currentFriend.score[j]
-                var userIndex = userScores[j];
-
-                scoreDifference += Math.abs(parseInt(userIndex - parseInt(currentFriendScore)));
-        };
+    
         if (scoreDifference <= bestMatch.scoreDifference){
                 bestMatch.name = currentFriend.name;
                 bestMatch.photo = currentFriend.photo;

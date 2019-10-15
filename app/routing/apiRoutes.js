@@ -1,4 +1,5 @@
-var friends = require('../app/data/friends');
+var friends = require('../data/friends');
+console.log(friends);
 
 // /api/friends
 // /api/friends
@@ -9,6 +10,7 @@ module.exports = function (app) {
     });
 
     app.post('/api/friends', function(req,res) {
+        console.log('post');
         var bestMatch = {
             name: "",
             photo: "",
@@ -24,7 +26,7 @@ module.exports = function (app) {
                 scoreDifference = 0;
                 console.log(currentFriend.name);
 
-                for (var j = 0; j < friends.scores.length; j++) {
+                for (var j = 0; j < friends[j].scores.length; j++) {
                     var currentFriendScore = currentFriend.score[j]
                     var userIndex = userScores[j];
     

@@ -1,5 +1,5 @@
 var friends = require('../data/friends');
-console.log(friends);
+// console.log(friends);
 
 // /api/friends
 // /api/friends
@@ -24,13 +24,13 @@ module.exports = function (app) {
         for(var i = 0; i < friends.length; i++) {
                 var currentFriend = friends[i];
                 scoreDifference = 0;
-                console.log(currentFriend.name);
+                // console.log(currentFriend.name);
 
-                for (var j = 0; j < friends[j].scores.length; j++) {
+                for (var j = 0; j < currentFriend.scores.length; j++) {
                     var currentFriendScore = currentFriend.score[j]
                     var userIndex = userScores[j];
     
-                    scoreDifference += Math.abs(parseInt(userIndex - parseInt(currentFriendScore)));
+                    scoreDifference += Math.abs(parseInt(userIndex) - parseInt(currentFriendScore));
             };
         };
 
